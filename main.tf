@@ -26,7 +26,7 @@ resource "aws_security_group" "derpy" {
 }
 
 resource "aws_instance" "app_server" {
-  ami             = "ami-0277b52859bac6f4b"
+  ami             = "ami-00ee4df451840fa9d"
   instance_type   = "t2.micro"
   key_name        = "pair_test"
   user_data	= file("file.sh")
