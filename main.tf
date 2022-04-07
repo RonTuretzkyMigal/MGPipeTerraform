@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami             = "ami-0892d3c7ee96c0bf7"
+  ami             = "ami-00ee4df451840fa9d"
   instance_type   = "t2.micro"
   key_name        = "pair_test"
   user_data	= file("file.sh")
