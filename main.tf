@@ -26,6 +26,7 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = "ExampleAppServerInstance"
   }
+  }
 
   resource "aws_security_group" "Docker" {
    egress = [
@@ -54,7 +55,7 @@ resource "aws_instance" "app_server" {
      to_port          = 22
   }
   ]
-  }
+
   tags = {
     type = "terraform-test-security-group"
   }
