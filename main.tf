@@ -17,7 +17,7 @@ provider "aws" {
 resource "aws_instance" "app_server" {
   ami             = "ami-00ee4df451840fa9d"
   instance_type   = "t2.micro"
-  key_name        = "aws_key_pair.mykey.key_name"
+  key_name        = "aws_key"
   user_data	= file("file.sh")
   vpc_security_group_ids = [aws_security_group.Docker.id]
 
@@ -61,8 +61,4 @@ resource "aws_instance" "app_server" {
     type = "terraform-test-security-group"
   }
 
-}
-resource "aws_key_pair" "mykey"{
-    key_name = "mykey"
-    public_key = file(var.aws_key.pem)
 }
