@@ -13,6 +13,11 @@ provider "aws" {
   profile = "default"
   region  = "us-east-2"
 }
+resource "aws_security_group" "Docker" {
+  tags = {
+    type = "terraform-test-security-group"
+  }
+}
 
 resource "aws_instance" "app_server" {
   ami             = "ami-0277b52859bac6f4b"
@@ -26,8 +31,3 @@ resource "aws_instance" "app_server" {
   }
 }
 
-resource "aws_security_group" "Docker" {
-  tags = {
-    type = "terraform-test-security-group"
-  }
-}
