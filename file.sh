@@ -15,6 +15,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo systemctl enable docker
 sudo docker login -u ronturetzkymigal -p derpyderp2
 sudo docker pull ronturetzkymigal/mgpipe
-sudo docker run -it ronturetzkymigal/mgpipe
-sudo ./run-assembly /opt/bin/bio/SampleDir/ /home/Test1 *1.fastq.gz --verbose --ncpus=1
+#sudo docker run -it ronturetzkymigal/mgpipe
+#sudo ./run-assembly /opt/bin/bio/SampleDir/ /home/Test1 *1.fastq.gz --verbose --ncpus=1
 
