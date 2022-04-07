@@ -20,19 +20,7 @@ resource "aws_instance" "app_server" {
   key_name        = "aws_key"
   user_data	= file("file.sh")
   vpc_security_group_ids = [aws_security_group.Docker.id]
-  provisioner "remote-exec" {
-    inline = [
-      "touch hello.txt",
-      "echo helloworld remote provisioner >> hello.txt",
-    ]
-  }
-  connection {
-      type        = "ssh"
-      host        = self.public_ip
-      user        = "ubuntu"
-      private_key = file("/home/ronturetzky/.ssh/aws_key")
-      timeout     = "4m"
-   }
+
 
 
 
@@ -74,7 +62,4 @@ resource "aws_instance" "app_server" {
   }
 
 }
-  resource "aws_key_pair" "deployer" {
-  key_name   = "aws_key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUFtTKN0ehhlrt6/Oy4XKRhYyjS5zAbujfY8holzMTJSsK+KKbcw+Rbk9wgheAmH/oaSBQMWdLuVv0+dZoCqvZkPLsp+/L42s/L12qvvo/RPl4S/hcQD886j1QzM4wmzghDlPjp79icDpUgw3Amwos2lQ6IU+xrlp60WbTF8eyMuKEom2dIVbozuGUeQ3juSmBvNj1LT7HMxFxxGf9RnswIaRTzg3VFA2KVwy4wg8Qx7uJVf/aYpUh/FjucehHaBIcFfY6abVnh1r5CZMfN3DyKxzykIXtbb6gQpY3T/TkhJPM1wYmDt4erFV4u7upJjc2WhzBWchy95T2pOQLl8pT ronturetzky@ront"
-}
+
