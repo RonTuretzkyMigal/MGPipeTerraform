@@ -13,7 +13,7 @@ provider "aws" {
   profile = "default"
   region  = "us-east-2"
 }
-resource "aws_security_group" "Docker" {
+resource "aws_security_group" "derpy" {
   egress{
   from_port=0
   to_port=0
@@ -30,7 +30,7 @@ resource "aws_instance" "app_server" {
   instance_type   = "t2.micro"
   key_name        = "JainwindowsServer"
   user_data	= file("file.sh")
-  security_groups = [ "Docker" ]
+  security_groups = ["derpy"]
 
   tags = {
     Name = "ExampleAppServerInstance"
