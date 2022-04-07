@@ -30,7 +30,6 @@ resource "aws_instance" "app_server" {
   instance_type   = "t2.micro"
   key_name        = "JainwindowsServer"
   user_data	= file("file.sh")
-  security_groups = "derpy"
 
   tags = {
     Name = "ExampleAppServerInstance"
