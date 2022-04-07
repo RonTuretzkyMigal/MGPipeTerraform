@@ -28,7 +28,7 @@ resource "aws_security_group" "derpy" {
 resource "aws_instance" "app_server" {
   ami             = "ami-0277b52859bac6f4b"
   instance_type   = "t2.micro"
-  key_name        = "Docker_Test"
+  key_name        = "pair_test"
   user_data	= file("file.sh")
 
   tags = {
