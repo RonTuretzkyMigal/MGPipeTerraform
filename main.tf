@@ -13,17 +13,6 @@ provider "aws" {
   profile = "default"
   region  = "us-west-2"
 }
-resource "aws_security_group" "derpy" {
-  egress{
-  from_port=0
-  to_port=0
-  protocol="-1"
-  cidr_blocks=["0.0.0.0/0"]
-  }
-  tags = {
-    type = "terraform-test-security-group"
-  }
-}
 
 resource "aws_instance" "app_server" {
   ami             = "ami-00ee4df451840fa9d"
